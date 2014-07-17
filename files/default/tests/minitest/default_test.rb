@@ -1,6 +1,6 @@
 require File.expand_path('../support/helpers', __FILE__)
 
-describe_recipe 'sbo_nagios::client' do
+describe_recipe 'nrpe_wrapper::default' do
 
   include Helpers::CommunityTests
 
