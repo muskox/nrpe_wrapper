@@ -42,7 +42,7 @@ if platform?("debian", "ubuntu")
 
 end
 
-service node['nagios']['nrpe']['service_name'] do
+service node['nrpe']['service_name'] do
   action [:start, :enable]
   supports :restart => true, :reload => true, :status => true
 end   
