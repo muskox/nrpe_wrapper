@@ -13,19 +13,13 @@ Chef version 0.10.10+ and Ohai 0.6.12+ are required.
 
 #### Cookbooks
 * nrpe
-
-
-Attributes
-----------
-TODO: List you cookbook attributes here.
+* apt
 
 
 Usage
 -----
 #### nrpe_wrapper::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `nrpe_wrapper` in your node's `run_list`:
 
 ```json
