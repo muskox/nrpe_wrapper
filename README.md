@@ -2,6 +2,7 @@ nrpe_wrapper Cookbook
 =====================
 
 This is a nrpe wrapper cookbook that wraps the community nrpe cookbook https://github.com/tas50/chef-nrpe
+This is an example wrapper cookbook, created to help teach people how wrapper cookbooks work. There is an upcoming blog post that will reference this code.
 
 Requirements
 ------------
