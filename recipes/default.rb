@@ -25,22 +25,17 @@ template "#{node['nrpe']['conf_dir']}/nrpe.d/my_custom_nrpe.cfg" do
   owner node['nrpe']['user']
   group node['nrpe']['group']
   mode 00644
-  variables(
-    :mon_host => node["nrpe"]["allowed_hosts"],
-    :nrpe_directory => "#{node['nrpe']['conf_dir']}/nrpe.d"
-  )
   notifies :restart, "service[#{node['nrpe']['service_name']}]"
 end
 
-if platform?("debian", "ubuntu")
 
-  cookbook_file "/usr/lib/nagios/plugins/check_nfs.sh" do
-	source "plugins/check_nfs.sh"
-	action :create_if_missing
-	mode	0755
-  end
-
+cookbook_file "/usr/lib/nagios/plugins/check_nfs.sh" do
+  source "plugins/check_nfs.sh"
+  action :create_if_missing
+  mode	0755
+  only_if { platform?("debian", "ubuntu")  }
 end
+
 
 service node['nrpe']['service_name'] do
   action [:start, :enable]
